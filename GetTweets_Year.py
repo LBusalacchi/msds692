@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan 23 19:45:29 2020
+Created on Thu Jan 2020
 
 @author: jelin
 """
 
 import GetOldTweets3 as got
-import json
 import pandas as pd
 import time
-from datetime import datetime
 from os import chdir
 import calendar
-import io
-import os
+
 
 cal = calendar.Calendar()
 
@@ -34,7 +31,8 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 1): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
+    #purposefully not setting location... results are extremely limited and location seems unreliable
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -43,7 +41,7 @@ for date in cal.itermonthdates(2019, 1): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 1):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -52,7 +50,7 @@ for date in cal.itermonthdates(2019, 1):
         
 for date in cal.itermonthdates(2019, 1):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -70,7 +68,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 2): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -79,7 +77,7 @@ for date in cal.itermonthdates(2019, 2): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 2):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -88,7 +86,7 @@ for date in cal.itermonthdates(2019, 2):
         
 for date in cal.itermonthdates(2019, 2):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -106,7 +104,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 3): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -115,7 +113,7 @@ for date in cal.itermonthdates(2019, 3): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 3):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -124,7 +122,7 @@ for date in cal.itermonthdates(2019, 3):
         
 for date in cal.itermonthdates(2019, 3):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -142,7 +140,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 4): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -151,7 +149,7 @@ for date in cal.itermonthdates(2019, 4): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 4):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -160,7 +158,7 @@ for date in cal.itermonthdates(2019, 4):
         
 for date in cal.itermonthdates(2019, 4):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -178,7 +176,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 5): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -187,7 +185,7 @@ for date in cal.itermonthdates(2019, 5): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 5):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -196,7 +194,7 @@ for date in cal.itermonthdates(2019, 5):
         
 for date in cal.itermonthdates(2019, 5):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -215,7 +213,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 6): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -224,7 +222,7 @@ for date in cal.itermonthdates(2019, 6): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 6):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -233,7 +231,7 @@ for date in cal.itermonthdates(2019, 6):
         
 for date in cal.itermonthdates(2019, 6):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -251,7 +249,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 7): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -260,7 +258,7 @@ for date in cal.itermonthdates(2019, 7): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 7):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -269,7 +267,7 @@ for date in cal.itermonthdates(2019, 7):
         
 for date in cal.itermonthdates(2019, 7):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -287,7 +285,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 8): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -296,7 +294,7 @@ for date in cal.itermonthdates(2019, 8): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 8):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -305,7 +303,7 @@ for date in cal.itermonthdates(2019, 8):
         
 for date in cal.itermonthdates(2019, 8):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -323,7 +321,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 9): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -332,7 +330,7 @@ for date in cal.itermonthdates(2019, 9): #iterate through the dates including 2 
         
 for date in cal.itermonthdates(2019, 9):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -341,7 +339,7 @@ for date in cal.itermonthdates(2019, 9):
         
 for date in cal.itermonthdates(2019, 9):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -359,7 +357,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 10): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -368,7 +366,7 @@ for date in cal.itermonthdates(2019, 10): #iterate through the dates including 2
         
 for date in cal.itermonthdates(2019, 10):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -377,7 +375,7 @@ for date in cal.itermonthdates(2019, 10):
         
 for date in cal.itermonthdates(2019, 10):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -395,7 +393,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 11): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -404,7 +402,7 @@ for date in cal.itermonthdates(2019, 11): #iterate through the dates including 2
         
 for date in cal.itermonthdates(2019, 11):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -413,7 +411,7 @@ for date in cal.itermonthdates(2019, 11):
         
 for date in cal.itermonthdates(2019, 11):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -431,7 +429,7 @@ then = time.time()
 
 for date in cal.itermonthdates(2019, 12): #iterate through the dates including 2 days on either end
     tweetdate=date #set the date argument for the actual twitter pull command
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10) #set parameters for twitter search
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate change').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode") #set parameters for twitter search
     tweets = got.manager.TweetManager.getTweets(tweetCriteria) #set arguement for twitter pull
     for idx, tweet in enumerate(tweets): #create the loop that will go through each day 
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date #pull 10 tweets from each day into a dictionary
@@ -440,7 +438,7 @@ for date in cal.itermonthdates(2019, 12): #iterate through the dates including 2
         
 for date in cal.itermonthdates(2019, 12):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('climate crisis').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
@@ -449,7 +447,7 @@ for date in cal.itermonthdates(2019, 12):
         
 for date in cal.itermonthdates(2019, 12):
     tweetdate=date
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('global warming').setUntil(str(tweetdate)).setMaxTweets(10).setEmoji("unicode")
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
     for idx, tweet in enumerate(tweets):
         info[idx] = tweet.id, tweet.username, tweet.text, tweet.date
