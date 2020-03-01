@@ -17,8 +17,7 @@ cal = calendar.Calendar()
 chdir('D://Practicum1') #set filepath directory for this script
 
 
-#https://stackoverflow.com/questions/41684729/anyway-to-increase-twitter-mining-speed
-#and https://github.com/giordano91/twitter_scripts/blob/master/getTweetsWithHashtag/get_tweets_with_hashtag.py
+#Code developed from sources Giordano (2017a, 2017b).
 data = pd.DataFrame(columns=[]) #create an empty Pandas dataframe
 info = {} #create an empty dictionary
 
