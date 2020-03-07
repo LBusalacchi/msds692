@@ -2,7 +2,7 @@
 
 
 In the second half of the year, the massive scope of the Australian Bushfire captured climate news headlines worldwide, and eventually reached the front page of most major news outlets. Climate change has long been a hot button issue, but the rhetoric around it certainly seemed to reach new heights with this latest crisis. However, did the event really change how people felt about climate change? This project takes an initial look at the sentiment of tweets using key climate phrases, in relation to the key dates of the Australian Bushfire crisis.
-For high level technical details, please continue to read below. For an executive summary, please see the video posted [here](www.djfsdkjf).
+For high level technical details, please continue to read below. For an executive summary, please see the video posted [here](https://youtu.be/XOjmVZ7xUg4).
 
 ## Data Gathering
 The first step in our process to understanding the potential changes in sentiment are gather data. For this analysis we will be using tweets that contain the key phrases “climate change”, “climate crisis”, and “global warming”. These phrases are often used interchangeably, though those familiar with the subject but say “global warming” is a misnomer for the predicted changes. However, it is still widely used and is certain to be used with numerous tweets related to bushfires or wildfires in general. 
